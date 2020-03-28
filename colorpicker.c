@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 	c.pixel = XGetPixel(XGetImage(d, root, ev.xbutton.x_root, ev.xbutton.y_root, 1, 1, AllPlanes, ZPixmap), 0, 0);
 	XQueryColor(d, DefaultColormap(d, DefaultScreen(d)), &c);
 
-	printf("#%x\n", (uint8_t)c.red << 16 | (uint8_t)c.green << 8 | (uint8_t)c.blue);
+	printf("#%x", (uint8_t)c.red << 16 | (uint8_t)c.green << 8 | (uint8_t)c.blue);
 
 cleanup:
 	XUngrabKeyboard(d, CurrentTime);
